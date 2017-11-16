@@ -10,9 +10,9 @@
 <?
 //変数spreadsheetに指定のスプレッドシートオブジェクトを取得します
 var sheetApp = SpreadsheetApp.openById("1ld5dLDrJETGK-f6bampytMEszpEUN4jKdBksXQN_E40");
-var myData = sheetApp.getDataRange().getValues();
+var myData = 16 //sheetApp.getDataRange().getValues();
 //for(var i=0;i<myData.length;i++){
-output.append('<li>' + myData[Math.floor(Math.random()*myData.length)][0] + '</li>');
+output.append('<li>' + myData[Math.floor(Math.random()*myData.length)][1] + '</li>');
 //}
 ?>
 </ul>
