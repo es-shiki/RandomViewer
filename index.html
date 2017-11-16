@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<base target="_top">
+</head>
+<body>
+<h1>Hello Navi.</h1>
+
+<ul>
+<?
+//変数spreadsheetに指定のスプレッドシートオブジェクトを取得します
+var sheetApp = SpreadsheetApp.openById("1ld5dLDrJETGK-f6bampytMEszpEUN4jKdBksXQN_E40");
+var myData = sheetApp.getDataRange().getValues();
+//for(var i=0;i<myData.length;i++){
+output.append('<li>' + myData[Math.floor(Math.random()*myData.length)][0] + '</li>');
+//}
+?>
+</ul>
+
+</body>
+</html>
+
+
