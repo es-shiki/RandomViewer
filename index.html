@@ -1,23 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Random Scale</title>
 <base target="_top">
 </head>
 <body> 
-.Random Scale.<BR>
+.Random Scale.<br>
 <?
 //変数spreadsheetに指定のスプレッドシートオブジェクトを取得します
-var sheetApp = SpreadsheetApp.openById("1ld5dLDrJETGK-f6bampytMEszpEUN4jKdBksXQN_E40");
-var myData = sheetApp.getDataRange().getValues();
-var inRnumber = Math.floor(Math.random()*16);
-//var stImgUrl = '<img src="http://drive.google.com/uc?export=view&id=' + myData[inRnumber][2]+'" alt="'+myData[inRnumber][1]+'" title="' + myData[inRnumber][1] + '">';
-//for(var i=0;i<myData.length;i++){
-
-var stImgUrl = '<iframe src="https://drive.google.com/file/d/' + myData[inRnumber][2] + '/preview" width="210" height="250"></iframe>';
+var sheetApp = SpreadsheetApp.openById("1ld5dLDrJETGK-f6bampytMEszpEUN4jKdBksXQN_E40"); //imgフォルダのID指定
+var myData = sheetApp.getDataRange().getValues();//シート内全データ格納
+var inRnumber = Math.floor(Math.random()*16);//乱数生成でランダムな行番号を取得
+var stImgUrl = '<img src=\"'+ myData[inRnumber][2] +'\" '+ 'alt="'+myData[inRnumber][1]+'" title="TestT" width="210" height="250"></iframe>';//画像DL用のURLで画像表示。スマホへの表示対策。
 
 output.append(stImgUrl);
-//Logger.log(stImgUrl);
+Logger.log(myData[inRnumber][2]);
 
 //}
 ?>
