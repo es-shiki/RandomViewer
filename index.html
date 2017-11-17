@@ -1,21 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-<base target="_top"><title>文書のタイトル</title>
+<title>Random Scale</title>
+<base target="_top">
 </head>
-<body>
-Random Scale.<BR>
+<body> 
+.Random Scale.<BR>
 <?
 //変数spreadsheetに指定のスプレッドシートオブジェクトを取得します
 var sheetApp = SpreadsheetApp.openById("1ld5dLDrJETGK-f6bampytMEszpEUN4jKdBksXQN_E40");
 var myData = sheetApp.getDataRange().getValues();
-var stImgUrl = '<img src="http://drive.google.com/uc?export=view&id=' + myData[Math.floor(Math.random()*16)][2]+'">'
+var inRnumber = Math.floor(Math.random()*16);
+//var stImgUrl = '<img src="http://drive.google.com/uc?export=view&id=' + myData[inRnumber][2]+'" alt="'+myData[inRnumber][1]+'" title="' + myData[inRnumber][1] + '">';
 //for(var i=0;i<myData.length;i++){
+
+var stImgUrl = '<iframe src="https://drive.google.com/file/d/' + myData[inRnumber][2] + '/preview" width="210" height="250"></iframe>';
+
 output.append(stImgUrl);
-Logger.log(stImgUrl);
+//Logger.log(stImgUrl);
 
 //}
 ?>
+
 </body>
 </html>
 
