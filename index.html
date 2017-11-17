@@ -4,13 +4,13 @@
 <base target="_top">
 </head>
 <body> 
-.Random Scale.<br>
+<h>.Random Scale.</h><br>
 <?
 //変数spreadsheetに指定のスプレッドシートオブジェクトを取得します
 var sheetApp = SpreadsheetApp.openById("1ld5dLDrJETGK-f6bampytMEszpEUN4jKdBksXQN_E40"); //imgフォルダのID指定
 var myData = sheetApp.getDataRange().getValues();//シート内全データ格納
 var inRnumber = Math.floor(Math.random()*16);//乱数生成でランダムな行番号を取得
-var stImgUrl = '<img src=\"'+ myData[inRnumber][2] +'\" '+ 'alt="'+myData[inRnumber][1]+'" title="TestT" width="210" height="250"></iframe>';//画像DL用のURLで画像表示。スマホへの表示対策。
+var stImgUrl = '<img src=\"'+ myData[inRnumber][2] +'\" '+ 'alt="'+myData[inRnumber][1]+'" title="TestT" width="75%" height="auto"></iframe>';//画像DL用のURLで画像表示。スマホへの表示対策。
 
 output.append(stImgUrl);
 Logger.log(myData[inRnumber][2]);
